@@ -9,5 +9,3 @@
 5. Line 9 gives me an error: ```TypeError: Assignment to constant variable```. This makes sense because we are using the ```const``` keyword to declare ```result```. As we have assigned its value to be 0 on line 5, we can no longer reassign a new value to it on line 6. Thus, line 9 will not print anything but just gives us an error.
    
 6. Line 13 will also not print anything and just gives me an error: ```TypeError: Assignment to constant variable```. Once again, the explanation is similar to the one in question 5. Despite using the ```const``` keyword, we are trying to reassign a new value to a constant variable, which is not allowed.
-   
-7. 
