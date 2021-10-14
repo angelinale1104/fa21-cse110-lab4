@@ -20,7 +20,7 @@
 
 11. This function will return ```[50, 100, 150]```. Despite declaring the ```discounted``` array with a ```const``` keyword, it does not define a constant array. It define a constant reference to the array. Thanks to this, we can still modify the elements of a constant array like pushing new elements to the array. Thus, we can still get a correct ```discounted``` array despite using ```const``` keyword. (Reference: https://www.w3schools.com/js/js_array_const.asp)
 
-## DATA TYPES
+## Data Types
 12. A. ```student.name```
     
     B. ```student['Grad Year']```
@@ -28,7 +28,7 @@
     C. ```student.greeting()```
 
     D. ```student['Favorite Teacher'].name```
-    
+
     E. ```student.courseLoad[0]``` (Note: I am assuming "first index" is index 0 of the array. If I misunderstood and the question is asking for the item at index 1, the answer will be ```student.courseLoad[1]```)
 
 ## Basic Operators & Type Conversion 
@@ -41,6 +41,22 @@
 
     D. ```0```. This putput is a number because ```false``` and ```null``` is equivalent to number 0 in Javascript. Thus, we can treat this expression as 0 + 0 = 0. Hence, the output is the number 0.
 
-    E. ```3undefined```. This output is a string. This is similar to expression A. Since '3' is a string, the plus sign here acts to concatenate strings together. Thus, Javascript converts ```undefined``` into its string representation ```'undefined'``` and concatenate with '3'. Hence, the output is the string ```'3undefined'```.
+    E. ```'3undefined'```. This output is a string. This is similar to expression A. Since '3' is a string, the plus sign here acts to concatenate strings together. Thus, Javascript converts ```undefined``` into its string representation ```'undefined'``` and concatenate with '3'. Hence, the output is the string ```'3undefined'```.
 
     F. ```NaN```. This output is a number. Despite '3' is a string, the negative sign only has a mathematical meaning (which is subtracting). Thus, Javascript converts the string '3' into its number representation and subtract ```NaN``` (which s the equivalent value of ```undefined```) from it. Since ```3 - NaN = NaN```, the output is the number ```NaN```.
+
+14. Comparison\
+    A. ```true```. This expression evaluates to ```true``` because when comparing values of different types, JavaScript converts the values to numbers. Thus, the string '2' is converted to the number 2. Since 2 > 1 is true, the output is ```true```.
+    
+    B. ```false```. Since '2' and '12' are of the same type (i.e strings), Javascript will compare them character by character. Since '2' comes after '1' in the "lexicographical” order, '2' is greater than '1' and not less than. Thus, '2' < '12' is ```false```.
+
+    C. ```true```. This expression evaluates to ```true``` because when comparing values of different types, JavaScript converts the values to numbers. Thus, the string '2' is converted to the number 2. Since 2 == 2 is true, the output is ```true```.
+
+    D. ```false```. Since === is treated as a strict equality, there is no type conversion. Since 2 is a number and '2' is a string, they are not equal. Thus, the output is ```false```.
+
+    E. ```false```. Since they are of different types, Javascript converts them both into their number representation: true is equivalent to 1. Since 1 == 2 is false, the output is ```false```.
+
+    F. ```true```. Since 2 is not an intuitively “empty” value like 0/ null/ undefined/ etc, Boolean(2) will be evaluated to true. Since true === true is correct without needing any further conversion, the output is ```true```.
+
+15. 
+ 
