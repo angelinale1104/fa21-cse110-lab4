@@ -11,3 +11,36 @@
 6. Line 13 will also give me an error: ```ReferenceError: discountedPrice is not defined```. The reason is similar to that in question 5: we are using the ```let``` keyword to declare ```discountedPrice``` inside the for-loop. Hence, using that variable in line 13, which is outside of the for-loop, will cause an error.
 
 7. Line 14 will print out *150*, which is the final value of ```finalPrice```. The reason why this line doesn't throw an error despite using ```let``` is that we are declaring ```finalPrice``` outside of the for-loop and inside the general function. Thus, we can still access it before, inside and after the for-loop (which is inside the general function).
+
+8. This function will return ```[50, 100, 150]``` because we are looping through the original array of prices, reducing the value of each item by half then add these new discounted prices into the new array call ```discounted```. This is what the function returns. Also, despite declaring ```discounted``` with the ```let``` keyword, we are declaring it outside of the for-loop and inside the general function. Thus, we can still access it before, inside and after the for-loop (which is inside the general function).
+
+9. ```ReferenceError: i is not defined``` is thrown because ```i``` is declared using ```let``` inside the for-loop block. Thus, it's not visible outside of the for-loop block, which is line 11.
+
+10. Line 12 will print out the length of the array ```prices```, which is 3 for the specific case of ```[100, 200, 300]```. The reason why this doesn't throw any errors despite declaring the ```length``` variable with a ```const``` keyword is that we are not trying to reassign a new value to ```length```. We just want to access and return its value.
+
+11. This function will return ```[50, 100, 150]```. Despite declaring the ```discounted``` array with a ```const``` keyword, it does not define a constant array. It define a constant reference to the array. Thanks to this, we can still modify the elements of a constant array like pushing new elements to the array. Thus, we can still get a correct ```discounted``` array despite using ```const``` keyword. (Reference: https://www.w3schools.com/js/js_array_const.asp)
+
+## DATA TYPES
+12. A. ```student.name```
+    
+    B. ```student['Grad Year']```
+
+    C. ```student.greeting()```
+
+    D. ```student['Favorite Teacher'].name```
+    
+    E. ```student.courseLoad[0]``` (Note: I am assuming "first index" is index 0 of the array. If I misunderstood and the question is asking for the item at index 1, the answer will be ```student.courseLoad[1]```)
+
+## Basic Operators & Type Conversion 
+13. Arithmetic\
+    A. ```'32'```. This output is a string because '3' is a string; so the plus sign here acts to concatenate strings together. Thus, Javascript converts the number 2 into its string representation '2' and concatenate with '3'. Hence, the output is the string '32'.
+
+    B. ```1```. This output is a number. Despite '3' is a string, the negative sign only has a mathematical meaning (which is subtracting). Thus, Javascript converts the string '3' into its number representation and subtract 2 from it. Hence, the output is the number 1.
+
+    C. ```3```. This output is a number because ```null``` is equivalent to number 0 in Javascript. Thus, we can treat this expression as 3 + 0 = 3. Hence, the output is the number 3.
+
+    D. ```0```. This putput is a number because ```false``` and ```null``` is equivalent to number 0 in Javascript. Thus, we can treat this expression as 0 + 0 = 0. Hence, the output is the number 0.
+
+    E. ```3undefined```. This output is a string. This is similar to expression A. Since '3' is a string, the plus sign here acts to concatenate strings together. Thus, Javascript converts ```undefined``` into its string representation ```'undefined'``` and concatenate with '3'. Hence, the output is the string ```'3undefined'```.
+
+    F. ```NaN```. This output is a number. Despite '3' is a string, the negative sign only has a mathematical meaning (which is subtracting). Thus, Javascript converts the string '3' into its number representation and subtract ```NaN``` (which s the equivalent value of ```undefined```) from it. Since ```3 - NaN = NaN```, the output is the number ```NaN```.
