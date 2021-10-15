@@ -1,0 +1,3 @@
+1. The bug was the **wrong type** of ```num1``` and ```num2```. Instead of being numbers for the addition to work properly, ```num1``` and ```num2``` were of type string. Thus, the result is "12" instead of 3 since we are concatenating 2 strings instead of adding 2 numbers.
+
+2. I was able to fix the bug by converting ```num1``` and ```num2``` from string to number by writing ```Number(num1) + Number(num2)```. This fix makes these variables become number and perform the addition correctly. Thus, the resulting sum is now 3, which is what we want.
