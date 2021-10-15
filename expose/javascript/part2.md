@@ -72,3 +72,5 @@
 
 ## setInterval(), setTimeout(), clearTimeout()
 18. The code snippet will be in a JS file part2-question18.js
+
+19. The output is ```1 4 3 2```. The reason why the output is this way is because line 2 (which prints out 1) and line 5 (which prints out 4) executes immediate after running without any delay. Thus, the first 2 digits in the output is 1 and 4. Between printing out 2 and 3, since line 3 (which prints out 2) has a delay of 1000ms (1s) while line 2 (which prints out 3) has a delay of 0ms, number 3 will definitely be printed out first. Hence, the last 2 digits of the output will be 3 then 2.
