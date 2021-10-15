@@ -1,8 +1,8 @@
-1. Line 12 will print out the final value of ```i``` at the end of the for loop, which is *3*. There isn't an error because we used ```var```, which is not block-scope. Also, the reason why ```i = 3``` is because the ```prices.length = 3```. By the 4th iteration of the for-loop (```i = 3```), ```i``` is no longer < ```prices.length```. So we will exit the for-loop with the final value of ```i``` being 3.
+1. Line 12 will print out the final value of ```i``` at the end of the for loop, which is **3**. There isn't an error because we used ```var```, which is not block-scope. Also, the reason why ```i = 3``` is because the ```prices.length = 3```. By the 4th iteration of the for-loop (```i = 3```), ```i``` is no longer < ```prices.length```. So we will exit the for-loop with the final value of ```i``` being 3.
    
-2. Line 13 will print out the final value of ```discountedPrice``` after the for-loop is done executing, which is *150*. There isn't any error because we also used ```var``` to declare ```discountedPrice```. Hence, we can use it even outside of the for-loop. The reason why ```discountedPrice = 150``` is because the last value of ```i``` that can still be used inside the for-loop is 2. We know that ```discountedPrice = prices[i] * (1 - discount)```. If we plug in all appropriate values, we will have ```discountedPrice = prices[2] * (1 - discount)```, which equals to ```300 * (1 - 0.5) = 150```.
+2. Line 13 will print out the final value of ```discountedPrice``` after the for-loop is done executing, which is **150**. There isn't any error because we also used ```var``` to declare ```discountedPrice```. Hence, we can use it even outside of the for-loop. The reason why ```discountedPrice = 150``` is because the last value of ```i``` that can still be used inside the for-loop is 2. We know that ```discountedPrice = prices[i] * (1 - discount)```. If we plug in all appropriate values, we will have ```discountedPrice = prices[2] * (1 - discount)```, which equals to ```300 * (1 - 0.5) = 150```.
    
-3. Line 14 will print out the final value of ```finalPrice``` after the for-loop is done executing, which is *150*. There isn't any error because we also used ```var``` to declare ```finalPrice```. The reason why ```finalPrice = 150``` is because the final value of ```discountedPrice``` is 150. We know that ```finalPrice = Math.round(discountedPrice * 100)/100;```. If we plug in all appropriate values, we will have ```finalPrice = Math.round(150 * 100)/100 = 15000/100 = 150```.
+3. Line 14 will print out the final value of ```finalPrice``` after the for-loop is done executing, which is **150**. There isn't any error because we also used ```var``` to declare ```finalPrice```. The reason why ```finalPrice = 150``` is because the final value of ```discountedPrice``` is 150. We know that ```finalPrice = Math.round(discountedPrice * 100)/100;```. If we plug in all appropriate values, we will have ```finalPrice = Math.round(150 * 100)/100 = 15000/100 = 150```.
 
 4. ```discountPrices([100, 200, 300], .5)``` will return ```[50, 100, 150]``` because we are looping through the original array of prices, reducing the value of each item by half then add these new discounted prices into the new array call ```discounted```. This is what the function returns. Also, since we declared ```discounted``` with the ```var``` keyword, we can still access its final value even outside of the for-loop.
 
@@ -10,7 +10,7 @@
 
 6. Line 13 will also give me an error: ```ReferenceError: discountedPrice is not defined```. The reason is similar to that in question 5: we are using the ```let``` keyword to declare ```discountedPrice``` inside the for-loop. Hence, using that variable in line 13, which is outside of the for-loop, will cause an error.
 
-7. Line 14 will print out *150*, which is the final value of ```finalPrice```. The reason why this line doesn't throw an error despite using ```let``` is that we are declaring ```finalPrice``` outside of the for-loop and inside the general function. Thus, we can still access it before, inside and after the for-loop (which is inside the general function).
+7. Line 14 will print out **150**, which is the final value of ```finalPrice```. The reason why this line doesn't throw an error despite using ```let``` is that we are declaring ```finalPrice``` outside of the for-loop and inside the general function. Thus, we can still access it before, inside and after the for-loop (which is inside the general function).
 
 8. This function will return ```[50, 100, 150]``` because we are looping through the original array of prices, reducing the value of each item by half then add these new discounted prices into the new array call ```discounted```. This is what the function returns. Also, despite declaring ```discounted``` with the ```let``` keyword, we are declaring it outside of the for-loop and inside the general function. Thus, we can still access it before, inside and after the for-loop (which is inside the general function).
 
@@ -58,5 +58,17 @@
 
     F. ```true```. Since 2 is not an intuitively “empty” value like 0/ null/ undefined/ etc, Boolean(2) will be evaluated to true. Since true === true is correct without needing any further conversion, the output is ```true```.
 
-15. 
- 
+15. The difference between == and === is that == will try to convert the variable values to be of the same type before comparing them. On the other hand, === will compare the variables as-is, without any further conversion. Hence, 'regular equality' vs 'strict equality'.
+
+## Loops
+16. The code snippet will be in a JS file part2-question16.js
+
+## Functions
+17. The result will be [2, 4, 6]. Here is how I was able to arrive at this result.\
+    * In line 1, we are given 2 parameters: ```array``` and ```callback```. Later, in line 13, we specify that our ```callback``` argument will be the function ```doSomething```. Thus, ```doSomething(array[i])``` will be called in line 4 in each iteration of the for-loop.
+    * In line 2, we are creating a new empty array that will be used to add new items and return later.
+    * From line 3 - 5, we are going through the given array using the for-loop. In each iteration, we are calling the function ```doSomething``` and pass in each item of the original array as the argument to the function. This function call will enter ```doSomething``` and double the value of those item. After the function call is done executing, we will go back to line 4 to push the new value to the new empty array we created earlier in line 2. This for-loop will keep iterating until we run out of items in the original array. Line 3 - 5 will add 2, 4, 6 into the new array.
+    * In line 6, we have already finished running through the for-loop, doubling all values and add them to the new array. Thus, we can just return [2, 4, 6] as the result.
+
+## setInterval(), setTimeout(), clearTimeout()
+18. The code snippet will be in a JS file part2-question18.js
